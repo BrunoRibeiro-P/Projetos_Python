@@ -1,3 +1,5 @@
+#feito por Bruno Felipe e Daniel
+
 from time import sleep
 print("CISC (Complex Instruction Set Computer) ")
 pc = int(input("Qual computador deseja usar o [1 ,2 ,3 ,4, 5]: "))
