@@ -38,4 +38,5 @@ class InfraestruturaDeRedes:
         
 
 
-InfraestruturaDeRedes().Lan_São_Paulo()
+Inf = InfraestruturaDeRedes()
+Inf.Lan_São_Paulo()
