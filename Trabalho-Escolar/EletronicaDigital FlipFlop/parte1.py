@@ -35,10 +35,20 @@ class caixa_água():
                 time.sleep(1)
                 self.circuito = False
 
-caixa = caixa_água(int(input('Qual o tamanho da caixa de água? ')))
-deseja_ligar = str(input('Deseja ligar o circuito? [S/N]: ')).upper()    
-if deseja_ligar == 'N':
-    caixa.iniciando(0)
-elif deseja_ligar == 'S':
-    caixa.iniciando(1)
-    caixa.processo()
+def main():
+    programa = True
+    while programa == True:
+        deseja_ligar = str(input('Deseja ligar o circuito? [S/N]: ')).upper()    
+        if deseja_ligar == 'N':
+            caixa = caixa_água(0)
+            caixa.iniciando(0)
+        elif deseja_ligar == 'S':
+            caixa = caixa_água(int(input('Qual o tamanho da caixa de água? ')))
+            caixa.iniciando(1)
+            caixa.processo()
+        desligar_programa = input('Deseja desligar o programa? [S/N]: ').upper()
+        if desligar_programa == 'S':
+            programa = False #desligando o programa        
+
+if __name__ == "__main__":
+    main()
