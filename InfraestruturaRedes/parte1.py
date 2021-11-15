@@ -1,36 +1,44 @@
 class InicialDoPrograma:
-    def __init__(self):
-        self.ip = None
     
-    def conectar_ip(self):
-        self.ip = int(input('Qual enderesso de IP deseja conectar?'))
+    def __init__(self, laptops, hostswitchs, hostrs, servers):
+
+        self.laptops = laptops
+        self.hostswitchs = hostswitchs
+        self.hostrs = hostrs
+        self.servers = servers
+        self.nome_laptops_armazenar = list()
+        self.local_laptops_armazenar = list()
+        self.passwordw = list()
+
+    def nomes_locais_laptops(self):
+
+        for inteiro in range(self.laptops):
+            nome = input(f'Digite o nome do laptop {inteiro+1}: ')
+            local = input(f'Digite o local do laptop {nome}: ')
+            self.nome_laptops_armazenar.append(nome)
+            self.local_laptops_armazenar.append(local)
+            self.armazenar_laptops = {k: v for k, v in zip(self.nome_laptops_armazenar, self.local_laptops_armazenar)}
+            print(self.armazenar_laptops)
+
+    def login_laptops(self, conectar_laptop):
+        pass
+
+ligar = input('Deseja ligar o programa? [S/N]: ').upper()
+if ligar == 'S':
+    acrescentar = input('Deseja acrecentar algo? [S/N]: ').upper()
+    if acrescentar == 'S':
+        laptop = int(input('Digite o número de laptops que deseja conectar: '))
+        hosts_switch = int(input('Digite o número de switch que deseja conectar: '))
+        r = int(input('Digite o número de host R que deseja conectar: '))
+        server = int(input('Digite o número de servers que deseja conectar: '))
+        início = InicialDoPrograma(laptop, hosts_switch, r, server)
+        início.nomes_locais_laptops()
+    else:
+        conectar_laptop = int(input('Digite qual laptop deseja contectar'))
+        print('continua...')
 
 
 
-class InfraestruturaDeRedes(InicialDoPrograma):
 
-    
-    def __init__(self):
 
-        self.password = None
-        self.laptops = ['PC1','PC2','PC3','PC4','PC5']
 
-    def Login(self):
-            
-        while True:
-            for contador in range(4):
-                self.conectar = input(f'Deseja-se conectar ao {self.laptops[contador]} [S/N]:').upper()
-                if self.conectar == 'S':
-                    self.password = input('Digite a senha: ')
-                    if self.password != 'Testando':
-                        while self.password != 'Testando':
-                            print('Senha incorreta, digite novamente ')
-                            self.password = input('Digite a senha: ')
-                    else:
-                        print(f'Computador {self.laptops[contador]} Logado. ')
-                self.continuar = input('Deseja conectar a mais um computador [S/N]: ').upper()
-                if self.continuar == 'N':
-                    break
-            break
-        
-InfraestruturaDeRedes().Login()
