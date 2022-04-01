@@ -1,2 +1,2 @@
 # Projetos_Python
- Farei Alguns projetos escolares e ideias 
+Alguns projetos escolares e ideas sobre elas!
